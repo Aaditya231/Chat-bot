@@ -1,16 +1,13 @@
-Example Discord bot written in Python that uses the [completions API](https://beta.openai.com/docs/api-reference/completions) to have conversations with the `text-davinci-003` model, and the [moderations API](https://beta.openai.com/docs/api-reference/moderations) to filter the messages.
 
 This bot uses the [OpenAI Python Library](https://github.com/openai/openai-python) and [discord.py](https://discordpy.readthedocs.io/).
 
-This repo is not accepting pull requests. Please fork this repo if you want to add or change features.
+
 
 # Features
 
 - `/chat` starts a public thread, with a `message` argument which is the first user message passed to the bot
 - The model will generate a reply for every user message in any threads started with `/chat`
 - The entire thread will be passed to the model for each request, so the model will remember previous messages in the thread
-- when the context limit is reached, or a max message count is reached in the thread, bot will close the thread
-- you can customize the bot instructions by modifying `config.yaml`
 - you can change the model, the hardcoded value is `text-davinci-003`
 
 # Setup
@@ -37,9 +34,7 @@ This repo is not accepting pull requests. Please fork this repo if you want to a
 1. If you want to change the personality of the bot, go to `src/config.yaml` and edit the instructions
 1. If you want to change the moderation settings for which messages get flagged or blocked, edit the values in `src/constants.py`. A lower value means less chance of it triggering.
 
-# FAQ
 
-> Why isn't my bot responding to commands?
 
 Ensure that the channels your bots have access to allow the bot to have these permissions.
 - Send Messages
